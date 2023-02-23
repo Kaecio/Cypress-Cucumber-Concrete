@@ -1,0 +1,12 @@
+# arquivos de configuração
+/cypress.env.json
+/cypress.json
+
+# arquivos gerados pelo Cypress
+/cypress/screenshots/
+/cypress/videos/
+/cypress/results/
+
+# dependências do Cypress (geralmente armazenadas em node_modules)
+/cypress/node_modules/
+node_modules
