@@ -5,7 +5,7 @@ Funcionalidade: Cadastrar usuario
     usuario como admin
     
 Contexto: 
-    Given que estou na pagina de Admin
+    Dado que estou na pagina de Admin
     E clico no botao Add
 
 Esquema do Cenario: Cadastro de ususario inválido
@@ -14,9 +14,20 @@ Esquema do Cenario: Cadastro de ususario inválido
     Então vejo a mensagem de "Required" nos campos não preenchidos
 
     Exemplos:
-    | employee name   |    
-    | Linda Jane Anderson |
+    | employee name      |    
+    |Linda Jane Anderson |
     
+
+Esquema do Cenario: Cadastrar um usuario 
+    Quando preencho as seguites dados corretamente "<user role>" "<employee name>" "<status>" "<username>" "<password>"
+    E clico no botao Save
+    Então vejo o pop up com a seguinte mensagem "Success"
+    E vejo o novo usuario cadastrado em tela
+
+    Exemplos:
+    |user role    |employee name      |status   |username         |password    |
+    |Admin        |Linda Jane Anderson|Enabled  |Henrique Braga   |Teste123!   |
+    |ESS          |Linda Jane Anderson|Disabled |Fanderson Kaecio |Teste123!   |
 
 
 # Esquema do Cenario: Submeter um cadastro somente com o papel funcao "<user role>"
@@ -90,14 +101,4 @@ Esquema do Cenario: Cadastro de ususario inválido
 #     |ESS          |Lisa  Andrews|Disabled |Fanderson Kaecio |teste1234! |teste1234!      |
 #     Então vejo a mensagem de Required nos campos não preenchidos
 
-
-Esquema do Cenario: Cadastrar um usuario 
-    Quando preencho as seguites dados corretamente "<user role>" "<employee name>" "<status>" "<username>" "<password>"
-    Então vejo o pop up com a seguinte mensagem "Success"
-    E vejo o novo usuario cadastrado em tela
-
-    Exemplos:
-    |user role    |employee name      |status   |username         |password    |
-    |Admin        |Linda Jane Anderson|Enabled  |Henrique Braga   |Teste123!   |
-    |ESS          |Linda Jane Anderson|Disabled |Fanderson Kaecio |Teste123!   |
 
