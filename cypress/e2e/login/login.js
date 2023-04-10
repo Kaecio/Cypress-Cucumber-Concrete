@@ -1,7 +1,7 @@
 ///<reference types="cypress" />
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
 
-Given(/^que eu estou na pagina de login$/, () => {
+Given(/^que eu estou na página de login$/, () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
 });
 
@@ -43,7 +43,7 @@ When(/^preencho os campos Username e Password corretamente$/, () => {
 	cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123')
 });
 
-Then(/^sou direcionado para a pagina Home$/, () => {
+Then(/^sou direcionado para a página Home$/, () => {
 	cy.get('.oxd-topbar-header-breadcrumb > .oxd-text').should('be.visible').should('have.text', 'Dashboard')
     cy.location().should((location) => {
         expect(location.pathname).to.eq('/web/index.php/dashboard/index')

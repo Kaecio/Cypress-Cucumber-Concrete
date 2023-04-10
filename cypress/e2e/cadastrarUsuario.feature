@@ -1,31 +1,31 @@
 #language: pt
 
 Funcionalidade: Cadastrar usuario
-    Como usuario com da plataforma orageHrm, desejo cadastrar novos
-    usuario como admin
+    Como usuario da plataforma orageHrm, desejo cadastrar novos
+    usuários como admin
     
 Contexto: 
     Dado que estou na pagina de Admin
-    E clico no botao Add
+    E clico no botão Add
 
 Esquema do Cenario: Cadastro de ususario inválido
     Quando submeto o seguinte formulario de cadastro "<employee name>"
-    E clico no botao Save
+    E clico no botão Save
     Então vejo a mensagem de "Required" nos campos não preenchidos
 
     Exemplos:
-    | employee name      |    
+    |employee name       |    
     |Linda Jane Anderson |
     
 
 Esquema do Cenario: Cadastrar um usuario 
     Quando preencho as seguites dados corretamente "<user role>" "<employee name>" "<status>" "<username>" "<password>"
-    E clico no botao Save
+    E clico no botão Save
     Então vejo o pop up com a seguinte mensagem "Success"
     E vejo o novo usuario cadastrado em tela
 
     Exemplos:
-    |user role    |employee name      |status   |username         |password    |
+    |user role    |employee name      |status   |username          |password    |
     |Admin        |Linda Jane Anderson|Enabled  |Henrique Braga   |Teste123!   |
     |ESS          |Linda Jane Anderson|Disabled |Fanderson Kaecio |Teste123!   |
 

@@ -16,7 +16,7 @@ Given(/^que estou na pagina de Admin$/, () => {
 });
 
 
-When(/^clico no botao Add$/, () => {
+When(/^clico no botão Add$/, () => {
 	cy.wait(2000)
 	cy.get('.orangehrm-header-container > .oxd-button').should('be.visible').click({force: true});
 	// cy.get('.orangehrm-header-container > .oxd-button')
@@ -32,7 +32,7 @@ When(/^submeto o seguinte formulario de cadastro "([^"]*)"$/, (nome_do_empregado
 	
 });
 
-When(/^clico no botao Save$/, () => {
+When(/^clico no botão Save$/, () => {
 	cy.get('.oxd-button--secondary').click()
 });
 
@@ -76,7 +76,7 @@ Then(/^vejo o pop up com a seguinte mensagem "([^"]*)"$/, (message) => {
 });
 
 
-When(/^vejo o novo usuario cadastrado em tela$/, () => {
+When(/^vejo o novo usuário cadastrado em tela$/, () => {
 	
 });
 
