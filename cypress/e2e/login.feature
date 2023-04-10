@@ -1,7 +1,7 @@
 #language: pt
 
 Funcionalidade: Login
-   Como usuário, desejo fazer o login cpm sucesso para utilizar a ferramenta do orageHrm
+   Como usuário, desejo fazer o login com sucesso para utilizar a ferramenta do orageHrm
 
 Contexto:
     Dado que eu estou na página de login

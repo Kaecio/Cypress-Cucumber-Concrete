@@ -11,7 +11,7 @@ beforeEach(() => {
 });
 
 
-Given(/^que estou na pagina de Admin$/, () => {
+Given(/^que estou na página de Admin$/, () => {
 	cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers')
 });
 
@@ -24,7 +24,7 @@ When(/^clico no botão Add$/, () => {
 });
 
 
-When(/^submeto o seguinte formulario de cadastro "([^"]*)"$/, (nome_do_empregado) => {
+When(/^submeto o seguinte formulário de cadastro "([^"]*)"$/, (nome_do_empregado) => {
 	cy.get('.oxd-autocomplete-text-input > input').type(nome_do_empregado)
 	cy.wait(2000)
 	cy.get('.oxd-autocomplete-option').first().click()
@@ -48,12 +48,12 @@ Then(/^vejo a mensagem de "([^"]*)" nos campos não preenchidos$/, (message) => 
 });
 
 
-When(/^preencho as seguites dados corretamente "([^"]*)" "([^"]*)" "([^"]*)" "([^"]*)" "([^"]*)"$/, (user_role,employe_name,status,username,password) => {
+When(/^preencho os seguites dados corretamente "([^"]*)" "([^"]*)" "([^"]*)" "([^"]*)" "([^"]*)"$/, (user_role,employe_name,status,username,password) => {
 	cy.get(':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text').click()
 	cy.wait(1000)
 	cy.contains('.oxd-select-dropdown > *', user_role).click();
 	cy.get('.oxd-autocomplete-text-input > input').type(employe_name)
-	cy.wait(2000)
+	cy.wait(3000)
 	cy.get('.oxd-autocomplete-option').first().click()
 	cy.wait(500)
 	cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text').click();
@@ -63,16 +63,16 @@ When(/^preencho as seguites dados corretamente "([^"]*)" "([^"]*)" "([^"]*)" "([
 	cy.get(':nth-child(4) > .oxd-input-group > :nth-child(2) > .oxd-input').type(username)
 	cy.wait(3000)
 	cy.get('.user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input').type(password)
-	cy.wait(3000)
+	cy.wait(2000)
 	cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type(password)
-	cy.wait(3000)
+	cy.wait(2000)
 
 });
 
 
 Then(/^vejo o pop up com a seguinte mensagem "([^"]*)"$/, (message) => {
-	cy.wait(4500)
-	cy.get('.oxd-toast').should('exist')
+	// cy.wait(4500)
+	cy.get('.oxd-text--toast-title').should('have.text', message)
 });
 
 
