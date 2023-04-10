@@ -25,7 +25,7 @@ Esquema do Cenario: Cadastrar um usuario
     E vejo o novo usuario cadastrado em tela
 
     Exemplos:
-    |user role    |employee name      |status   |username          |password    |
+    |user role    |employee name      |status   |username         |password    |
     |Admin        |Linda Jane Anderson|Enabled  |Henrique Braga   |Teste123!   |
     |ESS          |Linda Jane Anderson|Disabled |Fanderson Kaecio |Teste123!   |
 

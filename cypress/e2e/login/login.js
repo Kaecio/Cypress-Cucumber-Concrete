@@ -9,7 +9,7 @@ When(/^preencher somente o campo Password$/, () => {
 	cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123')
 });
 
-When(/^clicar no botao Login$/, () => {
+When(/^clicar no botão Login$/, () => {
 	cy.get('.oxd-button').click()
 });
 
@@ -27,13 +27,13 @@ Then(/^eu vejo a alert "([^"]*)" no input Password$/, (message) => {
 });
 
 
-When(/^eu nao preencher os campos Username e Password$/, () => {
+When(/^eu não preencher os campos Username e Password$/, () => {
 	cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('{selectall}{backspace}')
 	cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('{selectall}{backspace}')
 });
 
 
-Then(/^eu vejo a alert "([^"]*)" no input Password e no input Password$/, (message) => {
+Then(/^eu vejo a alert "([^"]*)" no input Username e no input Password$/, (message) => {
     cy.get(':nth-child(2) > .oxd-input-group > .oxd-text').should('have.text',message)
     cy.get(':nth-child(3) > .oxd-input-group > .oxd-text').should('have.text',message )
 });
