@@ -6,16 +6,19 @@ Funcionalidade: Login
 Contexto:
     Dado que eu estou na página de login
 
+@manual
 Cenario: Ver o "Required" no input Username 
     Quando preencher somente o campo Password
     E clicar no botão Login
     Então eu vejo a alert "Required" no input Username
-
+    
+@manual
 Cenario: Ver o "Required" no input Password 
     Quando preencher somente o campo Username
     E clicar no botão Login
     Então eu vejo a alert "Required" no input Password
 
+@manual
 Cenario: Ver o "Required" no input Username e no input Password
     Quando eu não preencher os campos Username e Password
     E clicar no botão Login

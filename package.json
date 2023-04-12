@@ -1,7 +1,7 @@
 {
   "name": "cypress",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Para rodar:   Rode no terminal npm run cypress",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,20 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^12.6.0"
-  },
   "devDependencies": {
+    "cypress": "^12.9.0",
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "stepDefinitions": "cypress/e2e/login.feature"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaecio/Cypress-Cucumber-Concrete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kaecio/Cypress-Cucumber-Concrete/issues"
+  },
+  "homepage": "https://github.com/Kaecio/Cypress-Cucumber-Concrete#readme"
 }

@@ -8,16 +8,17 @@ Contexto:
     Dado que estou na página de Admin
     E clico no botão Add
 
+@manual @smoke
 Esquema do Cenario: Cadastro de ususario inválido
     Quando submeto o seguinte formulário de cadastro "<employee name>"
     E clico no botão Save
     Então vejo a mensagem de "Required" nos campos não preenchidos
 
     Exemplos:
-    |employee name       |    
-    |Linda Jane Anderson |
+    |employee name     |    
+    |Gabriel  Castañeda|
     
-
+@regressivo
 Esquema do Cenario: Cadastrar um usuario 
     Quando preencho os seguites dados corretamente "<user role>" "<employee name>" "<status>" "<username>" "<password>"
     E clico no botão Save
@@ -25,9 +26,9 @@ Esquema do Cenario: Cadastrar um usuario
     E vejo o novo usuario cadastrado em tela
 
     Exemplos:
-    |user role |employee name       |status   |username         |password  |
-    |Admin     |Linda Jane Anderson |Enabled  |Henrique Braga   |Teste123! |
-    |ESS       |Linda Jane Anderson |Disabled |Fanderson Kaecio |Teste123! |
+    |user role |employee name      |status   |username         |password  |
+    |Admin     |Gabriel  Castañeda |Enabled  |Henrique Braga   |Teste123! |
+    |ESS       |Gabriel  Castañeda |Disabled |Fanderson Kaecio |Teste123! |
 
 
 # Esquema do Cenario: Submeter um cadastro somente com o papel funcao "<user role>"
