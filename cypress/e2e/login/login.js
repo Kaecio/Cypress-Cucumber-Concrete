@@ -46,7 +46,7 @@ Then(/^eu vejo a alert "([^"]*)" no input Username e no input Password$/, (messa
 When(/^preencho os campos Username e Password corretamente$/, () => {
     cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin')
     cy.wait(2000)
-    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin12')
+    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123')
     // have.value mostra no bash o que foi recebido e o que era epserado de valor
     //cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').should('have.value', 'admin123')
 });
