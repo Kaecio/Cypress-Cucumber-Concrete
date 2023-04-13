@@ -48,7 +48,7 @@ When(/^preencho os campos Username e Password corretamente$/, () => {
     cy.wait(2000)
     cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin12')
     // have.value mostra no bash o que foi recebido e o que era epserado de valor
-    //cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').should('have.value', 'admin123')
+    cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').should('have.value', 'admin123')
 });
 
 

@@ -18,7 +18,7 @@ Esquema do Cenario: Cadastro de ususario inválido
     |employee name     |    
     |Gabriel  Castañeda|
     
-@regressivo
+
 Esquema do Cenario: Cadastrar um usuario 
     Quando preencho os seguites dados corretamente "<user role>" "<employee name>" "<status>" "<username>" "<password>"
     E clico no botão Save
