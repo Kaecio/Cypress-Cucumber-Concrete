@@ -8,6 +8,15 @@ beforeEach(() => {
 	cy.get('.oxd-button').click()
 	cy.wait(2000)
 	cy.get(':nth-child(1) > .oxd-main-menu-item').click()
+	cy.wait(5000)
+
+	if (cy.get(':nth-child(2) > .oxd-table-row > :nth-child(2) > div',{failOnStatusCode: false}).should('not.exist')) {
+		cy.get('.oxd-table-row > :nth-child(1) > .oxd-checkbox-wrapper > label > .oxd-checkbox-input > .oxd-icon').click({force: true})
+		cy.wait(2000)
+		cy.get('.orangehrm-horizontal-padding > div > .oxd-button').click()
+		cy.get('.orangehrm-modal-footer > .oxd-button--label-danger').click()
+	}
+
 });
 
 
@@ -16,7 +25,7 @@ Given(/^que estou na página de Admin$/, () => {
 });
 
 
-When(/^clico no botão Add$/, () => {
+When(/^adiciono um novo usuário$/, () => {
 	cy.wait(2000)
 	cy.get('.orangehrm-header-container > .oxd-button').should('be.visible').click({ force: true });
 	// cy.get('.orangehrm-header-container > .oxd-button')
@@ -33,7 +42,7 @@ When(/^submeto o seguinte formulário de cadastro "([^"]*)"$/, (nome_do_empregad
 });
 
 
-When(/^clico no botão Save$/, () => {
+When(/^salvo o novo usuário$/, () => {
 	cy.get('.oxd-button--secondary').click()
 });
 
@@ -75,5 +84,5 @@ Then(/^vejo o pop up com a seguinte mensagem "([^"]*)"$/, (message) => {
 
 
 When(/^vejo o novo usuário cadastrado em tela$/, () => {
-
+	return true;
 });

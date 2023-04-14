@@ -1,34 +1,38 @@
 #language: pt
 
-Funcionalidade: Cadastrar usuario
-    Como usuário da plataforma orageHrm, desejo cadastrar novos 
+Funcionalidade: Cadastrar usuário
+    Como usuário da plataforma orageHRM, desejo cadastrar novos 
     usuários como admin
     
 Contexto: 
     Dado que estou na página de Admin
-    E clico no botão Add
+    E adiciono um novo usuário
 
-@manual @smoke
-Esquema do Cenario: Cadastro de ususario inválido
+@manual @smoke @squad1
+Esquema do Cenario: Cadastrar usuário inválido
     Quando submeto o seguinte formulário de cadastro "<employee name>"
-    E clico no botão Save
+    E salvo o novo usuário
     Então vejo a mensagem de "Required" nos campos não preenchidos
 
     Exemplos:
     |employee name     |    
-    |Gabriel  Castañeda|
+    |Linda Jane Anderson|
     
-
-Esquema do Cenario: Cadastrar um usuario 
+@regressivo @squad1
+Esquema do Cenario: Cadastrar usuário com sucesso
     Quando preencho os seguites dados corretamente "<user role>" "<employee name>" "<status>" "<username>" "<password>"
-    E clico no botão Save
+    E salvo o novo usuário
     Então vejo o pop up com a seguinte mensagem "Success"
     E vejo o novo usuario cadastrado em tela
 
     Exemplos:
     |user role |employee name      |status   |username         |password  |
-    |Admin     |Gabriel  Castañeda |Enabled  |Henrique Braga   |Teste123! |
-    |ESS       |Gabriel  Castañeda |Disabled |Fanderson Kaecio |Teste123! |
+    |Admin     |Linda Jane Anderson |Enabled  |Henrique Braga   |Teste123! |
+    |ESS       |Linda Jane Anderson |Disabled |Fanderson Kaecio |Teste123! |
+
+
+
+
 
 
 # Esquema do Cenario: Submeter um cadastro somente com o papel funcao "<user role>"

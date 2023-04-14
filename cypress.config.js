@@ -11,5 +11,6 @@ module.exports = defineConfig({
     baseUrl:
       'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',
     specPattern: 'cypress/e2e/**/*.feature',
+    video: false
   },
 })

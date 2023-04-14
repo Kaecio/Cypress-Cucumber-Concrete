@@ -6,42 +6,35 @@ Given(/^que eu estou na página de login$/, () => {
 });
 
 
-When(/^preencher somente o campo Password$/, () => {
+When(/^preencho somente o campo Password$/, () => {
     cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123')
 });
 
-
-When(/^clicar no botão Login$/, () => {
-    cy.get('.oxd-button').click()
+//**************** */
+When(/^preencho somente o campo Username$/, () => {
+    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin')
 });
 
-
-Then(/^eu vejo a alert "([^"]*)" no input Username$/, (message) => {
+Then(/^eu vejo a alert "([^"]*)" no campo Password$/, (message) => {
     cy.get('.oxd-input-group > .oxd-text').should('have.text', message)
 });
 
+//************** */
 
-When(/^preencher somente o campo Username$/, () => {
-    cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Kaecio')
+
+Then(/^eu vejo a alert "([^"]*)" no campo Username$/, (message) => {
+    cy.get('.oxd-input-group > .oxd-text').should('have.text', message)
 });
 
-
-Then(/^eu vejo a alert "([^"]*)" no input Password$/, (message) => {
-    cy.get(':nth-child(3) > .oxd-input-group > .oxd-text').should('have.text', message)
-});
-
-
-When(/^eu não preencher os campos Username e Password$/, () => {
+When(/^eu não preencho os campos Username e Password$/, () => {
     cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('{selectall}{backspace}')
     cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('{selectall}{backspace}')
 });
 
-
-Then(/^eu vejo a alert "([^"]*)" no input Username e no input Password$/, (message) => {
+Then(/^eu vejo a alert "([^"]*)" no campo Username e no campo Password$/, (message) => {
     cy.get(':nth-child(2) > .oxd-input-group > .oxd-text').should('have.text', message)
     cy.get(':nth-child(3) > .oxd-input-group > .oxd-text').should('have.text', message)
 });
-
 
 When(/^preencho os campos Username e Password corretamente$/, () => {
     cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin')
@@ -51,6 +44,10 @@ When(/^preencho os campos Username e Password corretamente$/, () => {
     cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').should('have.value', 'admin123')
 });
 
+
+When(/^realizo o login$/, () => {
+    cy.get('.oxd-button').click()
+});
 
 Then(/^sou direcionado para a página Home$/, () => {
     cy.get('.oxd-topbar-header-breadcrumb > .oxd-text').should('be.visible').should('have.text', 'Dashboard')

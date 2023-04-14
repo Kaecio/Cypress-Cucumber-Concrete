@@ -6,26 +6,26 @@ Funcionalidade: Login
 Contexto:
     Dado que eu estou na página de login
 
-@manual
-Cenario: Ver o "Required" no input Username 
-    Quando preencher somente o campo Password
-    E clicar no botão Login
-    Então eu vejo a alert "Required" no input Username
+@fazer @squad2
+Cenario: Validar o "Required" no campo Username 
+    Quando preencho somente o campo Password
+    E realizo o login
+    Então eu vejo a alert "Required" no campo Username
     
-@manual
-Cenario: Ver o "Required" no input Password 
-    Quando preencher somente o campo Username
-    E clicar no botão Login
-    Então eu vejo a alert "Required" no input Password
+@smoke @squad2
+Cenario: Validar o "Required" no campo Password 
+    Quando preencho somente o campo Username
+    E realizo o login
+    Então eu vejo a alert "Required" no campo Password
 
-@manual
-Cenario: Ver o "Required" no input Username e no input Password
-    Quando eu não preencher os campos Username e Password
-    E clicar no botão Login
-    Então eu vejo a alert "Required" no input Username e no input Password
+@smoke @aquad3
+Cenario: Validar o "Required" no campo Username e no campo Password
+    Quando eu não preencho os campos Username e Password
+    E realizo o login
+    Então eu vejo a alert "Required" no campo Username e no campo Password
 
-@regressivo
+@regressivo @aquad3
 Cenario: Fazer login com sucesso
     Quando preencho os campos Username e Password corretamente 
-    E clicar no botão Login
+    E realizo o login
     Então sou direcionado para a página Home   
