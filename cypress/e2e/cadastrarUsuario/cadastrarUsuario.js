@@ -8,17 +8,8 @@ beforeEach(() => {
 	cy.get('.oxd-button').click()
 	cy.wait(2000)
 	cy.get(':nth-child(1) > .oxd-main-menu-item').click()
-	cy.wait(5000)
-
-	if (cy.get(':nth-child(2) > .oxd-table-row > :nth-child(2) > div',{failOnStatusCode: false}).should('not.exist')) {
-		cy.get('.oxd-table-row > :nth-child(1) > .oxd-checkbox-wrapper > label > .oxd-checkbox-input > .oxd-icon').click({force: true})
-		cy.wait(2000)
-		cy.get('.orangehrm-horizontal-padding > div > .oxd-button').click()
-		cy.get('.orangehrm-modal-footer > .oxd-button--label-danger').click()
-	}
-
+	cy.wait(5000)	
 });
-
 
 Given(/^que estou na página de Admin$/, () => {
 	cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers')
@@ -31,7 +22,6 @@ When(/^adiciono um novo usuário$/, () => {
 	// cy.get('.orangehrm-header-container > .oxd-button')
 	cy.wait(2000)
 });
-
 
 When(/^submeto o seguinte formulário de cadastro "([^"]*)"$/, (nome_do_empregado) => {
 	cy.get('.oxd-autocomplete-text-input > input').type(nome_do_empregado)
@@ -77,12 +67,11 @@ When(/^preencho os seguites dados corretamente "([^"]*)" "([^"]*)" "([^"]*)" "([
 	cy.wait(2000)
 });
 
-
 Then(/^vejo o pop up com a seguinte mensagem "([^"]*)"$/, (message) => {
 	cy.get('.oxd-text--toast-title').should('have.text', message)
 });
 
+When(/^vejo o novo usuario cadastrado em tela "([^"]*)"$/, (username) => {
+	cy.get('.oxd-table-row').contains(username)
 
-When(/^vejo o novo usuário cadastrado em tela$/, () => {
-	return true;
 });

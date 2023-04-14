@@ -23,7 +23,7 @@ Esquema do Cenario: Cadastrar usuário com sucesso
     Quando preencho os seguites dados corretamente "<user role>" "<employee name>" "<status>" "<username>" "<password>"
     E salvo o novo usuário
     Então vejo o pop up com a seguinte mensagem "Success"
-    E vejo o novo usuario cadastrado em tela
+    E vejo o novo usuario cadastrado em tela "<username>"
 
     Exemplos:
     |user role |employee name      |status   |username         |password  |
