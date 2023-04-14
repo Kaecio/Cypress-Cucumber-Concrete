@@ -10,19 +10,19 @@ When(/^preencho somente o campo Password$/, () => {
     cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123')
 });
 
-//**************** */
+When(/^realizo o login$/, () => {
+    cy.get('.oxd-button').click()
+});
+
+Then(/^eu vejo a alert "([^"]*)" no campo Username$/, (message) => {
+    cy.get('.oxd-input-group > .oxd-text').should('have.text', message)
+});
+
 When(/^preencho somente o campo Username$/, () => {
     cy.get(':nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input').type('Admin')
 });
 
 Then(/^eu vejo a alert "([^"]*)" no campo Password$/, (message) => {
-    cy.get('.oxd-input-group > .oxd-text').should('have.text', message)
-});
-
-//************** */
-
-
-Then(/^eu vejo a alert "([^"]*)" no campo Username$/, (message) => {
     cy.get('.oxd-input-group > .oxd-text').should('have.text', message)
 });
 
@@ -42,11 +42,6 @@ When(/^preencho os campos Username e Password corretamente$/, () => {
     cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').type('admin123')
     // have.value mostra no bash o que foi recebido e o que era epserado de valor
     cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input').should('have.value', 'admin123')
-});
-
-
-When(/^realizo o login$/, () => {
-    cy.get('.oxd-button').click()
 });
 
 Then(/^sou direcionado para a página Home$/, () => {

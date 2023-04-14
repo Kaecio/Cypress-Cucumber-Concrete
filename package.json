@@ -16,7 +16,7 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "stepDefinitions": "cypress/e2e/login.feature"
+    "stepDefinitions": "cypress/integration/login.feature"
   },
   "repository": {
     "type": "git",
